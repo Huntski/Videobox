@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 
 class Video extends Model
 {
@@ -17,8 +18,13 @@ class Video extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function getVideoAttribute()
+    {
+        return Storage::url($this->video_path);
+    }
+    
     public function getThumbnailAttribute()
     {
-        return $this->thumbnail_path;
+        return Storage::url($this->thumbnail_path);
     }
 }

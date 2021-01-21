@@ -18,7 +18,9 @@ class DatabaseSeeder extends Seeder
             'name' => 'admin',
             'email' => 'wieberan@hotmail.nl',
             'password' => Hash::make('secret'),
-            'is_admin' => 1
+            'role' => 'admin'
         ]);
+
+        \App\Models\User::factory(10)->create();
     }
 }

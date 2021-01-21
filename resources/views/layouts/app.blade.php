@@ -14,10 +14,12 @@
 <body class="min-h-screen">
     <div class="flex flex-wrap h-full">
         <aside class="bg-nav w-1/5 sticky h-screen text-white p-5">
-            <div class="flex items-center">
-                <img src="{{ asset('img/logo.svg') }}" alt="Videobox logo" class="w-10">
-                <h1 class="text-lg ml-5 font-bold">Videobox</h1>
-            </div>
+            <a href="{{ route('home.index') }}">
+                <div class="flex items-center">
+                    <img src="{{ asset('img/logo.svg') }}" alt="Videobox logo" class="w-10">
+                    <h1 class="text-lg ml-5 font-bold">Videobox</h1>
+                </div>
+            </a>
         </aside>
 
         <div class="flex-1">
@@ -40,11 +42,12 @@
                         <img src="{{ auth()->user()->avatar_path }}" alt="Your user avatar" class="contain w-full h-full" id="account-avatar">
                     </div>
 
-                    <div class="absolute w-80 bg-white border border-gray-400 top-20 right-5" id="account-dropdown">
+                    <div class="absolute w-80 bg-white border border-gray-400 top-20 right-e5" id="account-dropdown">
                         <div class="flex flex-wrap p-5">
                             <div class="bg-red-500 rounded-full w-12 h-12 overflow-hidden">
                                 <img src="{{ auth()->user()->avatar_path }}" alt="Your user avatar" class="contain w-full h-full">
                             </div>
+
                             <div class="ml-3 flex flex-col">
                                 <span>{{ auth()->user()->name }}</span>
                                 <span class="text-gray-500 text-sm">{{ auth()->user()->email }}</span>

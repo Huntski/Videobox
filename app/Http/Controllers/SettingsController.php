@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\UpdateSettingsRequest;
 
 class SettingsController extends Controller
 {
@@ -11,5 +12,10 @@ class SettingsController extends Controller
         $user = $request->user();
 
         view('settings');
+    }
+
+    public function update(UpdateSettingsRequest $request)
+    {
+        return auth()->user()->update($request->validated());
     }
 }

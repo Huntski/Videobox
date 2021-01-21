@@ -5,13 +5,15 @@
     <h1 class="text-3xl font-bold">Most popular</h1>
     <div>
         @foreach ($popular as $video)
+        <a href="">
             <div>
-                <video src="{{ $video->video_path }}" width="320" height="240" controls>
+                <img src="{{ $video->thumbnail }}">
                 
-                </video>
+                </img>
                 <h2>{{ $video->title }}</h2>
                 <p>{{ $video->description }}</p>
             </div>
+        </a>
         @endforeach
     </div>
 </div>

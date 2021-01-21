@@ -16,7 +16,9 @@ module.exports = {
           text: '#fff',
         },
 
-        main: '#A54AFF'
+        main: '#A54AFF',
+
+        logo: '#A266C3'
       },
 
       fontFamily: {

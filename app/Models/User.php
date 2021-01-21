@@ -42,11 +42,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getIsAdminattribute()
-    {
-        return $this->is_admin;
-    }
-
     public function getAvatarPathAttribute()
     {
         return $this->avatar_path ?? 'https://i0.wp.com/www.repol.copl.ulaval.ca/wp-content/uploads/2019/01/default-user-icon.jpg';

@@ -7,6 +7,8 @@ use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\UserController;
 
 Auth::routes();
 
@@ -22,11 +24,14 @@ Route::middleware('auth')->group(function () {
     Route::post('/video/create', [VideoController::class, 'store']);
 
     Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');
-
+    Route::post('/settings', [SettingsController::class, 'update'])->name('settings.update');
 
     // Admin auth
-    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
-    Route::get('/admin/user/create', [UserController::class, 'index'])->name('user.create');
-    Route::get('/admin/user/create', [UserController::class, 'index'])->name('user.create');
-    Route::delete('/admin/user/delete', [UserController::class, 'index'])->name('user.index');
+    Route::get('admin', function () {
+        return redirect()->route('users.index');
+    });
+
+    Route::resource('admin/users', AdminUserController::class)->except([
+        'edit'
+    ]);
 });
