@@ -1,8 +1,12 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://github.com/Huntski/Videobox/blob/master/public/img/logo.svg" width="400"></a></p>
+# Videobox
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Videobox is a school final exam project, focused on building the correct security while developing a youtube like application, that contains a admin pannel to manage users.
+
+## Installation
+
+Follow the following steps to install the videobox laravel application.
+
+```bash
+composer i
+php artisan migrate:fresh --seed
+```
